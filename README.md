@@ -1,5 +1,5 @@
 # FastAPI_SqlAlchemy_Fast_UI
-[![Python application](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml/badge.svg)](https://github.com/damodhar918/sdgp/actions/workflows/python-app.yml) [![codecov](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI/graph/badge.svg?token=MHZTS92Y4I)](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI) [![Unit Tests](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml/badge.svg?branch=main)](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml)
+[![Python application](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml/badge.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml) [![codecov](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI/graph/badge.svg?token=MHZTS92Y4I)](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI) [![Unit Tests](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml/badge.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml)
 
 FastAPI framework for managing items, leveraging SQLAlchemy for database operations.
 
