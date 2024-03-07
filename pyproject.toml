@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Fast_API_SqlAlchemy_Fast_UI"
+version = "0.1.0"
+description = "A FastAPI application for managing items"
+authors = [
+    {name = "Damodhar Jangam", email = "damodhar918@outlook.com"},
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "fastapi",
+    "sqlalchemy",
+    "databases",
+    "pydantic",
+    "uvicorn",
+    "requests",
+    "faker",
+    "aiosqlite",
+]
+
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "isort", "flake8", "httpx"]
+
+
+
+[project.scripts]
+fake_load = "cli.req:main"
+fast_app = "app.main:main"
+
+
