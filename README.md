@@ -1,4 +1,5 @@
 # FastAPI_SqlAlchemy_Fast_UI
+[![Python application](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml/badge.svg)](https://github.com/damodhar918/sdgp/actions/workflows/python-app.yml) [![codecov](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI/graph/badge.svg?token=MHZTS92Y4I)](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI) [![Unit Tests](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml/badge.svg?branch=main)](https://github.com/damodhar918/FastAPI_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml)
 
 FastAPI framework for managing items, leveraging SQLAlchemy for database operations.
 
@@ -29,7 +30,6 @@ pip install .[dev]
 To create a new item:
 `**fake_load:**` A script for loading data into your application, useful for development and testing.
 `fast_app: `A script for starting your FastAPI application with Uvicorn, simplifying the command needed to run your app.
-
 
 ## Running the Application
 
@@ -94,10 +94,16 @@ curl -X GET "http://127.0.0.1:8000/items" -H "accept: application/json"
 This command sends a GET request to the `/items` endpoint to retrieve all items.
 
 ## Testing
-```bash
-pytest -vv 
+
+To run the tests, navigate to the project directory and use the following commands:
+
+```
+pytest -vv
+pytest --cov=src --cov-report=xml tests/
+pytest --cov=src --cov-report=html tests/
 ```
 
+The `--cov` flag is used for measuring test coverage, while the `--cov-report` flag is used to specify the format of the coverage report. Running these commands will generate an XML and HTML coverage report in the `tests/` directory.
 
 ## Contributing
 

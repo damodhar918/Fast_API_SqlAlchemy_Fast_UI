@@ -24,7 +24,7 @@ dependencies = [
 
 
 [project.optional-dependencies]
-dev = ["pytest", "black", "isort", "flake8", "httpx"]
+dev = ["pytest", "black", "isort", "flake8", "httpx","pytest-cov" ]
 
 
 
