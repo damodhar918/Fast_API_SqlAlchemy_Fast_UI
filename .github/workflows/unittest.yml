@@ -26,8 +26,10 @@ jobs:
           python -m pip install invoke .[test]
           # pip install flake8 pytest colorama pandas pyarrow exrex pytest-cov
     - name: Install dev dependencies (if pyproject.toml exists)
-      run: 
-        if [ -f pyproject.toml ]; then pip install .[dev] ; fi
+      run: |
+        if (Test-Path pyproject.toml ) {
+          pip install .[dev]
+        }
 
     - name: Run unit tests
       run: |
