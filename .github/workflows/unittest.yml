@@ -39,3 +39,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: damodhar918/Fast_API_SqlAlchemy_Fast_UI
+
