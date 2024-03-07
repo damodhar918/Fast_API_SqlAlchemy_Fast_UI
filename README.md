@@ -93,14 +93,21 @@ curl -X GET "http://127.0.0.1:8000/items" -H "accept: application/json"
 
 This command sends a GET request to the `/items` endpoint to retrieve all items.
 
+## Testing
+```bash
+pytest -vv 
+```
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue to discuss potential improvements.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 Damodhar Jangam - damodhar918@outlook.com
+[damodhar918](github.com/damodhar918)
