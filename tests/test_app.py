@@ -18,7 +18,8 @@ def test_read_root():
 
 
 def test_create_item():
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name": "Test Item", "price": 100,
+                 "is_offer": False, "offer_ends": "1993-01-01"}
     response = client.post("/items/", json=item_data)
     item_id = response.json()["id"]
     assert response.status_code == 200
@@ -28,7 +29,8 @@ def test_create_item():
         "name": "Test Item",
         "description": None,
         "price": 100,
-        "is_offer": False
+        "is_offer": False,
+        "offer_ends": "1993-01-01"
     }
     response = client.delete(f"/items/{item_id}")
     assert response.status_code == 200
@@ -36,7 +38,8 @@ def test_create_item():
 
 def test_read_item():
     # First, create an item to read
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name": "Test Item", "price": 100,
+                 "is_offer": False, "offer_ends": "1993-01-01"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]
@@ -49,7 +52,8 @@ def test_read_item():
         "name": "Test Item",
         "description": None,
         "price": 100,
-        "is_offer": False
+        "is_offer": False,
+        "offer_ends": "1993-01-01"
     }
     response = client.delete(f"/items/{item_id}")
     assert response.status_code == 200
@@ -57,7 +61,8 @@ def test_read_item():
 
 def test_update_item():
     # First, create an item to update
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name": "Test Item", "price": 100,
+                 "is_offer": False, "offer_ends": "1993-01-01"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]
@@ -68,7 +73,8 @@ def test_update_item():
         "name": "Updated Item",
         "description": None,
         "price": 200,
-        "is_offer": False
+        "is_offer": True,
+        "offer_ends": "1943-01-01"
     }
     response = client.put(f"/items/{item_id}", json=updated_data)
     assert response.status_code == 200
@@ -79,7 +85,8 @@ def test_update_item():
 
 def test_delete_item():
     # First, create an item to delete
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name": "Test Item", "price": 100,
+                 "is_offer": False, "offer_ends": "1993-01-01"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]
