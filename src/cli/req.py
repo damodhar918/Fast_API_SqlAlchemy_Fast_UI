@@ -12,7 +12,8 @@ def generate_fake_item():
         "name": fake.word(),
         "description": fake.sentence(),
         "price": fake.random_int(min=1, max=1000),
-        "is_offer": fake.boolean()
+        "is_offer": fake.boolean(),
+        "offer_ends" : fake.date()
     }
 
 
@@ -41,6 +42,7 @@ def main():
             request_response(requests.post(URL, json=data))
 
         except Exception as e:
+            print(data)
             print("No connection", URL)
             print(e)
 

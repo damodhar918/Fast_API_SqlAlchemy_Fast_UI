@@ -11,7 +11,7 @@ print(f"Database URL: {DATABASE_URL}")
 if not DATABASE_DIR.exists():
     DATABASE_DIR.mkdir(parents=True)
 database = Database(DATABASE_URL)
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base = declarative_base()
