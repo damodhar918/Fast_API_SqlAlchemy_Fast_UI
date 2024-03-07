@@ -29,9 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if (Test-Path pyproject.toml ) {
-              pip install .[dev]
-          }
+          python -m pip install invoke .[dev]
           # pip install flake8 pytest colorama pandas pyarrow exrex pytest-cov
       - name: Lint with flake8
         run: |
