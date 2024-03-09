@@ -13,7 +13,7 @@ def generate_fake_item():
         "description": fake.sentence(),
         "price": fake.random_int(min=1, max=1000),
         "is_offer": fake.boolean(),
-        "offer_ends" : fake.date()
+        "offer_ends": fake.date()
     }
 
 
@@ -29,7 +29,7 @@ def request_response(response):
 
 
 # Define the URL of your FastAPI application
-URL = "http://localhost:8000/items/"
+URLS = ["http://localhost:8000/api_item/", "http://localhost:8000/items/"]
 
 
 def main():
@@ -39,11 +39,11 @@ def main():
         data = generate_fake_item()
         try:
             # Send a POST request to the FastAPI application
-            request_response(requests.post(URL, json=data))
+            request_response(requests.post(URLS[_ % 2], json=data))
 
         except Exception as e:
             print(data)
-            print("No connection", URL)
+            print("No connection", URLS[_ % 2])
             print(e)
 
 

@@ -2,6 +2,7 @@ from pydantic import BaseModel, ConfigDict
 from typing import Optional
 from datetime import date
 
+
 # class ItemBase(BaseModel):
 #     name: str
 #     description: str
@@ -11,6 +12,18 @@ from datetime import date
 
 class ItemBase(BaseModel):
     id: Optional[int] = None
+    name: str
+    description: Optional[str] = None
+    price: int
+    is_offer: Optional[bool] = False
+    offer_ends: Optional[date] = None
+
+
+class DeleteUserForm(BaseModel):
+    confirm: bool
+
+
+class UserForm(BaseModel):
     name: str
     description: Optional[str] = None
     price: int
@@ -31,6 +44,7 @@ class ItemOut(ItemBase):
             }
         }
         from_attributes = True
+
 
 # class ItemCreate(ItemBase):
 #     pass

@@ -2,10 +2,9 @@ from fastapi import FastAPI, HTTPException, Depends
 from typing import List
 from .models import Item, Base
 from .schemas import ItemBase, ItemOut
-from .dependencies import get_db
 from sqlalchemy.orm import Session
 from sqlalchemy import inspect
-from .database import engine
+from .database import engine, get_db
 
 app = FastAPI()
 

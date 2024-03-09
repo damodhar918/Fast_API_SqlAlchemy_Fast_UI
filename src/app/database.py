@@ -11,8 +11,16 @@ print(f"Database URL: {DATABASE_URL}")
 if not DATABASE_DIR.exists():
     DATABASE_DIR.mkdir(parents=True)
 database = Database(DATABASE_URL)
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 # Base = declarative_base()
 # Create tables if they don't exist

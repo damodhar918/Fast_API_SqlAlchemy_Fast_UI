@@ -30,4 +30,5 @@ dev = ["pytest", "black", "isort", "flake8", "httpx","pytest-cov" ]
 [project.scripts]
 fake_load = "cli.req:main"
 fast_api = "app.main_api:main"
+fast_ui = "app.main_ui:main"
 fast_app = "app.main:main"
