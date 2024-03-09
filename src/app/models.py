@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, Date
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
+
 
 class Item(Base):
     __tablename__ = "items"
@@ -11,5 +12,4 @@ class Item(Base):
     description = Column(String, index=True)
     price = Column(Integer)
     is_offer = Column(Boolean, default=False)
-    
-
+    offer_ends = Column(Date, index=True)

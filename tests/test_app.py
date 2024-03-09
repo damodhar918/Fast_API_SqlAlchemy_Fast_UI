@@ -1,6 +1,6 @@
 
 from fastapi.testclient import TestClient
-from src.app.main import app  # Import your FastAPI app
+from app.main_api import app  # Import your FastAPI app
 
 # Create a TestClient instance
 client = TestClient(app)
@@ -18,25 +18,20 @@ def test_read_root():
 
 
 def test_create_item():
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.post("/items/", json=item_data)
     item_id = response.json()["id"]
     assert response.status_code == 200
     assert response.json() == {
         # Assuming the first item created has an id of 1
-        "id": item_id,
-        "name": "Test Item",
-        "description": None,
-        "price": 100,
-        "is_offer": False
-    }
+        "id": item_id,"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.delete(f"/items/{item_id}")
     assert response.status_code == 200
 
 
 def test_read_item():
     # First, create an item to read
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]
@@ -45,31 +40,22 @@ def test_read_item():
     response = client.get(f"/items/{item_id}")
     assert response.status_code == 200
     assert response.json() == {
-        "id": item_id,
-        "name": "Test Item",
-        "description": None,
-        "price": 100,
-        "is_offer": False
-    }
+        "id": item_id,"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
+    
     response = client.delete(f"/items/{item_id}")
     assert response.status_code == 200
 
 
 def test_update_item():
     # First, create an item to update
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]
 
     # Now, update the item
     updated_data = {
-        "id": item_id,
-        "name": "Updated Item",
-        "description": None,
-        "price": 200,
-        "is_offer": False
-    }
+        "id": item_id,"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.put(f"/items/{item_id}", json=updated_data)
     assert response.status_code == 200
     assert response.json() == updated_data
@@ -79,7 +65,7 @@ def test_update_item():
 
 def test_delete_item():
     # First, create an item to delete
-    item_data = {"name": "Test Item", "price": 100}
+    item_data = {"name":"hundred","description":"Not chair bank there.","price":70,"is_offer":True,"offer_ends":"2001-10-29"}
     response = client.post("/items/", json=item_data)
     assert response.status_code == 200
     item_id = response.json()["id"]

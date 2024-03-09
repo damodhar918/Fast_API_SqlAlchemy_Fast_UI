@@ -14,6 +14,14 @@ database = Database(DATABASE_URL)
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
 # Base = declarative_base()
 # Create tables if they don't exist
 # Base.metadata.create_all(bind=engine)
