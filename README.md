@@ -1,4 +1,5 @@
 # FastAPI_SqlAlchemy_Fast_UI
+
 [![Python application](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml/badge.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/python-app.yml) [![codecov](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI/graph/badge.svg?token=MHZTS92Y4I)](https://codecov.io/github/damodhar918/FastAPI_SqlAlchemy_Fast_UI) [![Unit Tests](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml/badge.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/actions/workflows/unittest.yml) [![versions](https://img.shields.io/pypi/pyversions/fastui.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/) [![license](https://img.shields.io/github/license/pydantic/FastUI.svg)](https://github.com/damodhar918/Fast_API_SqlAlchemy_Fast_UI/blob/main/LICENSE)
 
 FastAPI framework for managing items, leveraging SQLAlchemy for database operations.
@@ -28,8 +29,9 @@ pip install .[dev]
 ## Usage
 
 To create a new item:
-`**fake_load:**` A script for loading data into your application, useful for development and testing.
-`fast_app: `A script for starting your FastAPI application with Uvicorn, simplifying the command needed to run your app.
+`fake_load:` A script for loading data into your application, useful for development and testing.
+`fast_api: `A script for starting your FastAPI application with Uvicorn, simplifying the command needed to run your app.
+`fast_app: `A script for starting your FastUI application with Uvicorn, simplifying the command needed to run your app.
 
 ## Running the Application
 
