@@ -21,7 +21,8 @@ dependencies = [
     "faker",
     "aiosqlite",
     "fastui",
-    "sqlmodel"
+    "sqlmodel",
+    "email-validator",
 ]
 
 [project.optional-dependencies]
